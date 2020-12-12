@@ -12,6 +12,4 @@ namespace Kube1.CloudProject.API.Controllers
             return new ObjectResult("1.0.0.0");
         }
     }
-
-
 }
