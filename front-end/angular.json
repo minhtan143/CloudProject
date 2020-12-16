@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "kubedemo-app"
+    }
+  },
+  "defaultProject": "kubedemo-app",
+  "cli": {
+    "analytics": "66efcce4-2ca1-4649-be50-a1cecb7458f5"
+  }
 }
