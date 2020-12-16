@@ -1,0 +1,36 @@
+<div class="form-container">
+  <div class="form">
+    <div class="form-row">
+      <div class="form-label">
+        Min value:
+      </div>
+      <div class="form-input">
+        <input type="text" [(ngModel)]="min">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">
+        Max value:
+      </div>
+      <div class="form-input">
+        <input type="text" [(ngModel)]="max">
+      </div>
+    </div>
+    <div class="form-row">
+        <div class="form-label"></div>
+        <div class="form-button">
+            <button (click)="generate()">
+                Generate random number
+            </button>
+        </div>
+    </div>
+    <div class="form-row">
+        <div class="form-label">
+            Result: 
+        </div>
+        <div class="form-result">
+            {{result}}
+        </div>
+    </div>
+  </div>
+</div>
