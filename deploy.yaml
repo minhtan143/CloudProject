@@ -64,8 +64,8 @@ metadata:
 spec:
   selector:
     app: kubedemo-ui
+  type: LoadBalancer
   ports:
-  - type: LoadBalancer
-    port: 4100
+  - port: 4100
     targetPort: 80
 
