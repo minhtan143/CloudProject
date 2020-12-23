@@ -1,0 +1,33 @@
+<div class="form-container">
+    <div class="form">
+      <div class="form-row">
+        <div class="form-label">
+          List value:
+        </div>
+        <div class="form-input">
+            <textarea rows="5" [(ngModel)]="input"></textarea>
+        </div>
+      </div>
+      <div class="form-row">
+          <div class="form-label"></div>
+          <div class="form-button">
+              <button (click)="generate()">
+                  Generate random from list
+              </button>
+          </div>
+      </div>
+      <div class="form-row">
+          <div class="form-label">
+              Result: 
+          </div>
+          <div class="form-result">
+              <ng-container *ngIf="result && result.length">
+                <ng-container *ngFor="let item of result">
+                    {{item}} <br>
+                </ng-container>
+              </ng-container>
+          </div>
+      </div>
+    </div>
+  </div>
+  

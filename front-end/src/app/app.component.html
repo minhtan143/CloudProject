@@ -1,5 +1,9 @@
 <div class="app-container">
-  <app-nav-bar></app-nav-bar>
-  <app-random-integer></app-random-integer>
+  <app-nav-bar (callback)="activeMenu = $event" [activeMenu]="activeMenu"></app-nav-bar>
+
+  <app-random-integer *ngIf="activeMenu === Menu.Integer"></app-random-integer>
+  <app-list-randomizer *ngIf="activeMenu === Menu.ListRandomizer"></app-list-randomizer>
+  <app-random-decimal *ngIf="activeMenu === Menu.Decimal"></app-random-decimal>
+  <app-string-generator *ngIf="activeMenu === Menu.StringGenerator"></app-string-generator>
 </div>
 <app-footer></app-footer>
