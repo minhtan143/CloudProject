@@ -52,19 +52,21 @@ namespace Kube1.CloudProject.API.Controllers
                     resources += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
                 if (lowerLetter)
                     resources += "abcdefghijklmnopqrstuvwxyz";
+                if (string.IsNullOrEmpty(resources))
+                    return new ObjectResult(new string[0]);
 
                 List<string> res = new List<string>();
-                for (int i = 0; i < stringCount; i++)
+                while (res.Count < stringCount)
                 {
                     string s = "";
                     string source = resources;
-                    for (int j = 0; j < characterCount; j++)
+                    while (s.Length < characterCount)
                     {
                         int t = random.Next(source.Length);
                         s += source[t];
-                        if (!allowDuplicate)
-                            source = source.Remove(t, 1);
                     }
+                    if (!allowDuplicate && res.Contains(s))
+                        continue;
                     res.Add(s);
                 }
 
