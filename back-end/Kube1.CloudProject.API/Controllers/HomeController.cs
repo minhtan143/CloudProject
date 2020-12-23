@@ -11,7 +11,7 @@ namespace Kube1.CloudProject.API.Controllers
     {
         public readonly Random random = new Random();
 
-        [HttpGet("RandomInteger")]
+        [HttpGet("RandomInteger/{minValue=0}/{maxValue=int.MaxValue}")]
         public async Task<IActionResult> RandomInteger(int minValue = 0, int maxValue = int.MaxValue)
         {
             return new ObjectResult(await Task.Run(() => random.Next(minValue, maxValue)));

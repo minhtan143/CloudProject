@@ -1,6 +1,15 @@
 <h1>Random.tanphuc</h1>
 <ul>
-    <li class="active">
+    <li (click)="changeMenu(Menu.Integer)" [class.active] = "activeMenu === Menu.Integer">
         Integer
+    </li>
+    <li (click)="changeMenu(Menu.ListRandomizer)" [class.active] = "activeMenu === Menu.ListRandomizer">
+        List Randomizer
+    </li>
+    <li (click)="changeMenu(Menu.Decimal)" [class.active] = "activeMenu === Menu.Decimal">
+        Decimal
+    </li>
+    <li (click)="changeMenu(Menu.StringGenerator)" [class.active] = "activeMenu === Menu.StringGenerator">
+        Strings
     </li>
 </ul>
