@@ -2,15 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { ApplicationService } from '../../services/application.service';
 
 @Component({
-  selector: 'app-random-integer',
-  templateUrl: './random-integer.component.html',
-  styleUrls: ['./random-integer.component.scss']
+  selector: 'app-random-decimal',
+  templateUrl: './random-decimal.component.html',
+  styleUrls: ['./random-decimal.component.scss']
 })
-export class RandomIntegerComponent implements OnInit {
-
-  min: number;
-  max: number;
+export class RandomDecimalComponent implements OnInit {
   result: number;
+
   constructor(
     private applicationService: ApplicationService
   ) { }
@@ -18,11 +16,12 @@ export class RandomIntegerComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  generate(){
-    this.applicationService.randomInteger(this.min, this.max).subscribe(
+  generate(): void{
+    this.applicationService.randomDecimal().subscribe(
       (res) => {
         this.result = res;
       }
     )
   }
+
 }

@@ -1,0 +1,63 @@
+<div class="form-container">
+  <div class="form">
+    <div class="form-row">
+      <div class="form-label">
+        String count:
+      </div>
+      <div class="form-input">
+        <input type="text" [(ngModel)]="stringCount">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">
+        Character by string count:
+      </div>
+      <div class="form-input">
+        <input type="text" [(ngModel)]="characterCount">
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">
+        Options:
+      </div>
+      <div class="form-input">
+        <label>
+          <input type="checkbox" [(ngModel)]="digits">
+          Include digits
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="upperLetter">
+          Include upper case
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="lowerLetter">
+          Include lower case
+        </label>
+        <label>
+          <input type="checkbox" [(ngModel)]="allowDupplicate">
+          Allow dupplicate strings
+        </label>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label"></div>
+      <div class="form-button">
+        <button (click)="generate()">
+          Generate random number
+        </button>
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-label">
+        Result:
+      </div>
+      <div class="form-result">
+        <ng-container *ngIf="result && result.length">
+          <ng-container *ngFor="let item of result">
+            {{item}} <br>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</div>
